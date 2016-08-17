@@ -13,7 +13,7 @@ args = get_args()
 
 
 def printPokemon(id, lat, lng, itime):
-    if args.display_in_console:
+    #if args.display_in_console:
         pokemon_name = get_pokemon_name(id).lower()
         pokemon_rarity = get_pokemon_rarity(id).lower()
         pokemon_id = str(id)

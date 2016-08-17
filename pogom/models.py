@@ -431,6 +431,12 @@ def parse_map(map_dict, step_location):
                 else:
                     lure_expiration, active_fort_modifier = None, None
 
+                if 'lure_info' in f:
+                    d_t = datetime.utcfromtimestamp((p['last_modified_timestamp_ms'] + 900000) / 1000.0)
+                    print("LURED POkEMON")
+                    print(f['lure_info'])
+                    printPokemon(f['lure_info']['active_pokemon_id'], f['latitude'], f['longitude'], d_t)
+
                 pokestops[f['id']] = {
                     'pokestop_id': f['id'],
                     'enabled': f['enabled'],
